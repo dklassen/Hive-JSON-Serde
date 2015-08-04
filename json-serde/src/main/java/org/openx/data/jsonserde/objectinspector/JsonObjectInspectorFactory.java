@@ -173,13 +173,13 @@ public class JsonObjectInspectorFactory {
             = new EnumMap<PrimitiveCategory, AbstractPrimitiveJavaObjectInspector>(PrimitiveCategory.class);
 
     static {
-    primitiveOICache.put(PrimitiveCategory.STRING, new JavaStringJsonObjectInspector());
-	primitiveOICache.put(PrimitiveCategory.BYTE, new JavaStringByteObjectInspector());
-	primitiveOICache.put(PrimitiveCategory.SHORT, new JavaStringShortObjectInspector());
+        primitiveOICache.put(PrimitiveCategory.STRING, new JavaStringJsonObjectInspector());
+	    primitiveOICache.put(PrimitiveCategory.BYTE, new JavaStringByteObjectInspector());
+	    primitiveOICache.put(PrimitiveCategory.SHORT, new JavaStringShortObjectInspector());
         primitiveOICache.put(PrimitiveCategory.INT, new JavaStringIntObjectInspector());
         primitiveOICache.put(PrimitiveCategory.LONG, new JavaStringLongObjectInspector());
-	primitiveOICache.put(PrimitiveCategory.FLOAT, new JavaStringFloatObjectInspector());
-	primitiveOICache.put(PrimitiveCategory.DOUBLE, new JavaStringDoubleObjectInspector());
+	    primitiveOICache.put(PrimitiveCategory.FLOAT, new JavaStringFloatObjectInspector());
+	    primitiveOICache.put(PrimitiveCategory.DOUBLE, new JavaStringDoubleObjectInspector());
         primitiveOICache.put(PrimitiveCategory.TIMESTAMP, new JavaStringTimestampObjectInspector());
     }
 

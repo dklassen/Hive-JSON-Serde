@@ -45,6 +45,7 @@ import org.apache.hadoop.hive.serde2.objectinspector.primitive.IntObjectInspecto
 import org.apache.hadoop.hive.serde2.objectinspector.primitive.LongObjectInspector;
 import org.apache.hadoop.hive.serde2.objectinspector.primitive.ShortObjectInspector;
 import org.apache.hadoop.hive.serde2.objectinspector.primitive.StringObjectInspector;
+import org.apache.hadoop.hive.serde2.objectinspector.primitive.HiveDecimalObjectInspector;
 import org.apache.hadoop.hive.serde2.typeinfo.StructTypeInfo;
 import org.apache.hadoop.io.Text;
 import org.openx.data.jsonserde.json.JSONArray;
@@ -303,6 +304,9 @@ public class JsonSerDe implements SerDe {
                         break;
                     case BYTE:
                         result = (((ByteObjectInspector)poi).get(obj));
+                        break;
+                    case DECIMAL:
+                        result = ((HiveDecimalObjectInspector)poi).getPrimitiveJavaObject(obj);
                         break;
                     case DOUBLE:
                         result = (((DoubleObjectInspector)poi).get(obj));

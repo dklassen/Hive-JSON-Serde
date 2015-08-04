@@ -12,32 +12,21 @@ Features:
 * Convert data to JSON format when INSERT INTO table
 * arrays and maps are supported
 * nested data structures are also supported. 
-* modular to support multiple versions of CDH
+
 
 COMPILE
 ---------
 
-Use maven to compile the serde.
-The project uses maven profiles to support multiple 
-version of hive/CDH. 
-To build for CDH4:
+Use maven to compile the serde:
 
 ```
-mvn -Pcdh4 clean package
-```
-
-To build for CDH5:
-```
-mvn -Pcdh5 clean package
+mvn clean package
 ```
 
 the serde will be in 
 ```
 json-serde/target/json-serde-VERSION-jar-with-dependencies.jar
 ```
-
-
-
 
 ```bash
 $ mvn package

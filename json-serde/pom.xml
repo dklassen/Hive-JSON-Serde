@@ -14,9 +14,7 @@
     <packaging>jar</packaging>
 
     <name>json-serde-main</name>
-
-
-    <build>	
+    <build>
 	<!-- wagon-ssh-external extension is necessary for deploying with scpexe -->
 	<extensions>
 	    <extension>
@@ -54,7 +52,7 @@
 		    </descriptorRefs>
 		    <archive>
 			<manifest>
-                           
+
 			</manifest>
 		    </archive>
 		</configuration>
@@ -67,48 +65,33 @@
 		    </execution>
 		</executions>
 	    </plugin>
-	
-	</plugins>
+
+	   </plugins>
     </build>
-
     <dependencies>
-        <dependency>
-		<groupId>org.openx.data</groupId>
-		<artifactId>${serde.shim}</artifactId>
-		<version>${project.version}</version>
-		<scope>compile</scope>
-	</dependency>
-
-	<dependency>
-                <groupId>org.openx.data</groupId>
-                <artifactId>json</artifactId>
-                <version>${project.version}</version>
-                <scope>compile</scope>
-        </dependency>
-
-
-	<dependency>
-	    <groupId>org.apache.hive</groupId>
-	    <artifactId>hive-serde</artifactId>
-	    <version>${cdh.hive.version}</version>
-	    <scope>provided</scope>
-	</dependency>
-	<dependency>
-	    <groupId>org.apache.hive</groupId>
-	    <artifactId>hive-exec</artifactId>
-	    <version>${cdh.hive.version}</version>
-	    <scope>provided</scope>
-	</dependency>
-
-	<dependency>
+      <dependency>
+        <groupId>org.openx.data</groupId>
+        <artifactId>json</artifactId>
+        <version>${project.version}</version>
+        <scope>compile</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.hive</groupId>
+        <artifactId>hive-serde</artifactId>
+        <version>${cdh.hive.version}</version>
+        <scope>provided</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.hive</groupId>
+        <artifactId>hive-exec</artifactId>
+        <version>${cdh.hive.version}</version>
+        <scope>provided</scope>
+	  </dependency>
+		<dependency>
 	    <groupId>org.apache.hadoop</groupId>
 	    <artifactId>hadoop-common</artifactId>
 	    <version>${cdh.hadoop.version}</version>
 	    <scope>provided</scope>
 	</dependency>
-
     </dependencies>
 </project>
-
-
-

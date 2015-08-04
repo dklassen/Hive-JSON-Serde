@@ -14,7 +14,7 @@
 	<connection>scm:git:git@github.com:rcongiu/Hive-JSON-Serde.git</connection>
 	<developerConnection>scm:git:git@github.com:rcongiu/Hive-JSON-Serde.git</developerConnection>
 	<url>scm:git:git@github.com:rcongiu/Hive-JSON-Serde.git</url>
-     
+
 	<tag>HEAD</tag>
     </scm>
 
@@ -26,59 +26,19 @@
     </licenses>
 
     <properties>
-	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	<maven-jar-plugin.version>2.4</maven-jar-plugin.version>
-        <!-- cdh4 versions -->
-        <cdh4.version>4.6.0</cdh4.version>
-        <cdh4.hive.version>0.10.0-cdh${cdh4.version}</cdh4.hive.version>
-        <cdh4.hadoop.version>2.0.0-cdh${cdh4.version}</cdh4.hadoop.version>
-        <!-- cdh5 versions -->
-        <cdh5.version>5.0.0</cdh5.version>
-        <cdh5.hive.version>0.12.0-cdh${cdh5.version}</cdh5.hive.version>
-        <cdh5.hadoop.version>2.3.0-cdh${cdh5.version}</cdh5.hadoop.version>
+      	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+      	<maven-jar-plugin.version>2.4</maven-jar-plugin.version>
+        <cdh.version>5.4.2.1</cdh.version>
+        <cdh.hive.version>0.13.1-cdh${cdh.version}</cdh.hive.version>
+        <cdh.hadoop.version>2.6.0-cdh${cdh.version}</cdh.hadoop.version>
     </properties>
 
-    <profiles>
-	<profile>
-	    <id>cdh4</id>
-	    <activation>
-      		<activeByDefault>true</activeByDefault>
-    	    </activation>
-	    <properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<serde.shim>json-serde-cdh4-shim</serde.shim>
-		<cdh.version>${cdh4.version}</cdh.version>
-		<cdh.hive.version>${cdh4.hive.version}</cdh.hive.version>
-		<cdh.hadoop.version>${cdh4.hadoop.version}</cdh.hadoop.version>
-		<cdh.shim>cdh4</cdh.shim>
-	    </properties>
-	</profile>
-	<profile>
-	    <id>cdh5</id>
-	    <properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<serde.shim>json-serde-cdh5-shim</serde.shim>
-		<cdh.version>${cdh5.version}</cdh.version>
-		<cdh.hive.version>${cdh5.hive.version}</cdh.hive.version>
-		<cdh.hadoop.version>${cdh5.hadoop.version}</cdh.hadoop.version>
-		<cdh.shim>cdh5</cdh.shim>
-	    </properties>
-	</profile>
-    </profiles>
-
-    <modules>
-	<module>json</module>
-	<module>json-serde-cdh4-shim</module>
-	<module>json-serde-cdh5-shim</module>
-	<module>json-serde</module>
-    </modules>
-
     <repositories>
-	<repository>
-	    <id>Cloudera</id>
-	    <name>Cloudera Maven Repo</name>
-	    <url>https://repository.cloudera.com/artifactory/cloudera-repos/</url>
-	</repository>
+    	<repository>
+    	    <id>Cloudera</id>
+    	    <name>Cloudera Maven Repo</name>
+    	    <url>https://repository.cloudera.com/artifactory/cloudera-repos/</url>
+    	</repository>
     </repositories>
 
     <dependencies>
@@ -134,15 +94,16 @@
 	</plugins>
     </reporting>
 
-  
+
     <build>
-	<extensions>
-	    <extension>
-		<groupId>org.apache.maven.wagon</groupId>
-		<artifactId>wagon-ssh-external</artifactId>
-		<version>2.2</version>
-	    </extension>
-	</extensions>
+    	<extensions>
+
+      	  <extension>
+      		<groupId>org.apache.maven.wagon</groupId>
+      		<artifactId>wagon-ssh-external</artifactId>
+      		<version>2.2</version>
+    	  </extension>
+    	</extensions>
 	<pluginManagement>
 	    <plugins>
 		<plugin>
@@ -150,9 +111,9 @@
 		    <artifactId>maven-release-plugin</artifactId>
 		    <version>2.1</version>
 		    <configuration>
-			<mavenExecutorId>forked-path</mavenExecutorId>
-			<useReleaseProfile>false</useReleaseProfile>
-			<arguments>-Psonatype-oss-release</arguments>
+    			<mavenExecutorId>forked-path</mavenExecutorId>
+    			<useReleaseProfile>false</useReleaseProfile>
+    			<arguments>-Psonatype-oss-release</arguments>
 		    </configuration>
 		</plugin>
 		<plugin>
@@ -229,6 +190,3 @@
 	</plugins>
     </build>
 </project>
-
-
-
