@@ -167,9 +167,8 @@ public class JsonSerDeTest {
         assertEquals("red", ((JSONArray) result.get("three")).get(0));
 	
     }
-    
-    
-        /**
+
+    /**
      * Test of deserialize method, of class JsonSerDe.
      */
     @Test
@@ -578,8 +577,8 @@ public class JsonSerDeTest {
         Object obj = serde.serialize(row, soi);
         
         assertTrue(obj instanceof Text);
-        assertEquals("{\"timestamp\":7898,\"two\":43.2,\"one\":true,\"three\":[],\"four\":\"value1\"}", obj.toString());
-        
+
+        assertEquals("{\"four\":\"value1\",\"one\":true,\"two\":43.2,\"three\":[],\"timestamp\":7898}", obj.toString());
         System.out.println("Output object " + obj.toString());
     }
     
@@ -590,7 +589,7 @@ public class JsonSerDeTest {
         JsonSerDe serde = getMappedSerde();
         
         InputStream is = this.getClass().getResourceAsStream("/testkeyword.txt");
-        
+
         LineNumberReader lnr = new LineNumberReader(new InputStreamReader(is));
         
         StructObjectInspector soi = (StructObjectInspector) serde.getObjectInspector();
